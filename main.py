@@ -2,10 +2,10 @@ import telebot
 import random
 
 # Conexión con nuestro BOT
-TU_TOKEN_AQUÍ = "6555420059:AAFQg0eWhHq0CbJ8NYSj1WQE9_CQpkzneao"
+TU_TOKEN_AQUÍ = ""
 bot = telebot.TeleBot(TU_TOKEN_AQUÍ)
 
-# Excusas
+#Lista de excusas
 who = [
     "Pennywise",
     "El Jinete sin Cabeza",
@@ -13,8 +13,21 @@ who = [
     "Un ser venido de otro planeta",
     "Godzilla",
     "Drácula",
-    "Cthulhu"
-  ];
+    "Cthulhu",
+    "El Hombre Lobo",
+    "El Yeti",
+    "La Momia",
+    "El Fantasma de la Ópera",
+    "La Bruja",
+    "El Monstruo del Lago Ness",
+    "El Hombre Invisible",
+    "El Alienígena",
+    "La Criatura del Pantano",
+    "El Vampiro",
+    "El Demonio",
+    "El Zombi"
+]
+
 action = [
     "comió",
     "destruyó",
@@ -22,30 +35,68 @@ action = [
     "desintegró",
     "pulverizó",
     "escondió",
-    "partió"
-  ];
+    "partió",
+    "trituró",
+    "devoró",
+    "aplastó",
+    "rompió",
+    "hundió",
+    "robo",
+    "consumió",
+    "abdujo",
+    "derritió",
+    "borró",
+    "contaminó",
+    "envenenó"
+]
+
 what = [
     "las llaves de mi casa",
     "el tejado del vecino",
     "mi coche nuevo",
     "las gafas de mi abuela",
     "los apuntes de HTML",
-    "el monopatín de mi hermano pequeño"
-  ];
+    "el monopatín de mi hermano pequeño",
+    "el teléfono móvil",
+    "el ordenador portátil",
+    "el control remoto de la televisión",
+    "la carta de amor",
+    "el pastel de cumpleaños",
+    "el libro de hechizos",
+    "la lámpara mágica",
+    "el trofeo del torneo",
+    "la joya del museo",
+    "la fórmula secreta",
+    "el mapa del tesoro",
+    "la varita mágica",
+    "la poción de la juventud"
+]
+
 when = [
     "después del almuerzo",
     "justo a tiempo",
     "después del concierto",
     "durante el viaje de fin de curso",
-    "depués de las clases",
+    "después de las clases",
     "durante la misa del domingo",
-    "durante la proyección de la película"
-  ];
+    "durante la proyección de la película",
+    "en plena noche",
+    "al amanecer",
+    "en pleno día",
+    "en la hora de la siesta",
+    "durante la cena",
+    "en la hora punta",
+    "durante la tormenta",
+    "en la luna llena",
+    "en pleno eclipse",
+    "en el momento más inesperado",
+    "en el peor momento posible",
+    "justo antes de la boda"
+]
 
+# CREACION DE LOS COMANDOS BASICOS
 
-
-
-# Creación de los comandos básicos 
+#Comando /start
 @bot.message_handler(commands=['start'])
 def send_start(message):
     start_text = """
@@ -57,18 +108,19 @@ def send_start(message):
     /help - Obtiene ayuda sobre cómo usar el bot
     /about - Muestra información sobre este bot
     /excusa - Elabora una excusa convincente
-    /clear - Limpia la pantalla
     
     ¡Espero que disfrutes usando este bot!
     """
     bot.reply_to(message, start_text)
 
 
+#Comando /help
 @bot.message_handler(commands=['help']) 
 def send_help(message):
     bot.reply_to(message, "¡Claro! Estoy aquí para ayudarte. Si tienes alguna pregunta o necesitas asistencia, no dudes en decírmelo. Estoy aquí para hacer que tu experiencia con este bot sea lo más fácil y agradable posible.")
 
 
+#Comando /about
 @bot.message_handler(commands=['about'])
 def send_about(message):
     about_text = """
@@ -78,6 +130,7 @@ def send_about(message):
     """
     bot.reply_to(message, about_text)
 
+#Comando /excusa
 @bot.message_handler(commands=['excusa'])
 def send_random_excuse(message):
     random_who = random.choice(who)
@@ -86,11 +139,6 @@ def send_random_excuse(message):
     random_when = random.choice(when)
     random_excuse = f"{random_who} {random_action} {random_what} {random_when}."
     bot.reply_to(message, random_excuse)
-
-@bot.message_handler(commands=['clear'])
-def clear_screen(message):
-    bot.delete_message(message.chat.id, message.message_id)
-
 
 
 
