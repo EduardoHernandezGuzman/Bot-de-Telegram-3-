@@ -4,7 +4,9 @@ Este proyecto consiste en un bot básico para Telegram desarrollado en Python ut
 
 ## Descripción
 
-Este repositorio contiene el código fuente necesario para crear un bot de Telegram funcional. El bot está diseñado para responder a comandos básicos y puede ser extendido fácilmente para agregar nuevas funcionalidades según sea necesario.
+Este bot para Telegram tiene una función principal que consiste en generar excusas convincentes de manera aleatoria. Cada excusa creada incluye elementos como quién causó el problema, qué acción realizó, qué objeto se vio afectado y cuándo ocurrió. 
+
+[Aquí](https://github.com/EduardoHernandezGuzman/Bot-de-Telegram-4-) puedes encontrar la versión mejorada de este bot, que además de elaborar una excusa aleatoria, te envía una imagen relacionada con la excusa.
 
 ## Configuración
 
