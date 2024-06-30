@@ -61,7 +61,7 @@ El bot actualmente cuenta con las siguientes funcionalidades:
 
 ## El bot en funcionamiento
 
-![bot03](https://github.com/EduardoHernandezGuzman/Bot-de-Telegram-3-/assets/139759297/7f08ad40-c35e-4284-b7ac-c348beda8b59)
+![bot03](https://github.com/EduardoHernandezGuzman/Bot-de-Telegram-3-/assets/139759297/ace4e624-b820-47a3-b18d-342acf21bf00)
 
 
 ## Personalización
